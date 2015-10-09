@@ -17,6 +17,9 @@ public class Picture
     private Circle sun;
     private Circle suelo;
     private Person persona;
+    private Circle grande;
+    private Triangle mediano;
+    private Square pequeño;
     
     /**
      * Constructor for objects of class Picture
@@ -66,6 +69,16 @@ public class Picture
         persona = new Person ();
         persona.moveHorizontal(-300);
         persona.makeVisible();
+        
+        grande = new Circle ();
+        grande.changeSize(200);
+        
+        
+        mediano = new Triangle ();
+        mediano.changeSize(100,80);
+        
+        pequeño = new Square ();
+        pequeño.changeSize(50);
         
         
     }
@@ -117,5 +130,25 @@ public class Picture
     public void movePerson()
     {
         persona.slowMoveHorizontal(150);
+    }
+    
+     /**
+     * Create new objects
+     */
+    public void createObjects()
+    {
+        grande.makeVisible();
+        mediano.makeVisible();
+        pequeño.makeVisible();
+    }
+    
+    /**
+     * Move new objects
+     */
+    public void moveObjects()
+    {
+        grande.slowMoveHorizontal(500);
+        mediano.slowMoveHorizontal(500);
+        pequeño.slowMoveHorizontal(500);
     }
 }
